@@ -110,9 +110,11 @@ function buy(whatToBuy) {
 				var newGrafix = document.createElement("img")
 				var randTop = Math.floor(Math.random()*101);
 				var randLeft = Math.floor(Math.random()*101);
+				var flavorText = consumables[j].displayName;
 				newGrafix.className = "grafix";
 				newGrafix.setAttribute("style", "top: " + randTop + "%; left: " + randLeft + "%;");
-				var flavorText;
+				newGrafix.setAttribute("alt", flavorText);
+				newGrafix.setAttribute("title", flavorText);
 				
 				// Boost-specific effects
 				switch (whatToBuy) {
@@ -145,9 +147,6 @@ function buy(whatToBuy) {
 						break;
 				}
 
-				flavorText = consumables[j].displayName;
-				newGrafix.setAttribute("alt", flavorText);
-				newGrafix.setAttribute("title", flavorText);
 				document.getElementById("grafixContainer").appendChild(newGrafix);
 				document.getElementById(consumables[j].objID + "Button").setAttribute("class","hidden");
 				consumables[j].owned = true;
