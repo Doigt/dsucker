@@ -34,10 +34,17 @@ div.dickDisplay {
 }
 
 #suckDickButton {
-	width: 200px;
+	width: 250px;
 	height: 100px;
 	font-size: 24px;
 }
+
+.buttonImage {
+	vertical-align: middle;
+}
+
+.left { margin-right: 10px; }
+.right { margin-left: 10px; }
 
 .hidden {
 	display: none;
