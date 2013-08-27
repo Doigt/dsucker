@@ -40,16 +40,16 @@ div.dickDisplay {
 }
 
 #shopContainer, #grafixContainer {
-	width: 275px;
+	width: 310px;
 }
 
 #shopContainer {
 	float: right;
+	overflow: auto;
 }
 
 #grafixContainer {
 	position: relative;
-	height: 800px;
 	float: left;
 }
 

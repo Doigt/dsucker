@@ -41,6 +41,13 @@ function main() {
 	document.getElementById("suckDickButtonContainer").appendChild(suckDickButton);
 	
 	window.setInterval(tick, 1000);
+	window.onresize = function() { scaleDivs(); };
+	scaleDivs();
+}
+
+function scaleDivs() {
+	document.getElementById("shopContainer").style.height = (window.innerHeight - 15) + "px";
+	document.getElementById("grafixContainer").style.height = (window.innerHeight - 15) + "px";
 }
 
 function createButton(product, consumable) {
@@ -61,7 +68,7 @@ function createButton(product, consumable) {
 
 function suckDick() {
 	dicksSucked += multiplier;
-	// dicksSucked += 1000000;
+	// dicksSucked += 1000000; 
 	allTimeDicksSucked += multiplier;
 	updateDisplay();
 }
