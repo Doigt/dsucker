@@ -124,7 +124,6 @@ function buy(whatToBuy) {
 						}
 						
 						newGrafix.src = "./i/vMode.png";
-						flavorText = "/v/ Mode Activated";
 						document.body.style.backgroundImage = "url('./i/vModeBackground.png')";
 						break;
 					case "dMode":
@@ -135,20 +134,18 @@ function buy(whatToBuy) {
 						}
 						
 						newGrafix.src = "./i/dMode.png";
-						flavorText = "/d/ Mode Activated";
 						document.body.style.backgroundImage = "url('./i/dModeBackground.png')";
 						break;
 					case "aerodynamicDicks":
 						newGrafix.src = "./i/aerodynamicDicks.png";
-						flavorText = "Aerodynamic Dicks";
 						currentDPS += currentDPS;
 						break;
 					case "permaLube":
 						newGrafix.src = "./i/permaLube.png";
-						flavorText = "Permanently Lubed Throat";
 						break;
 				}
 
+				flavorText = consumables[j].displayName;
 				newGrafix.setAttribute("alt", flavorText);
 				newGrafix.setAttribute("title", flavorText);
 				document.getElementById("grafixContainer").appendChild(newGrafix);
