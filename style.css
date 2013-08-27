@@ -1,0 +1,65 @@
+h1 {
+	font-size: 48px;
+	margin: none;
+	padding: none;
+}
+
+div.dickDisplay, .magicCenterElement, h1 {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+div.dickDisplay {
+	font-family: Helvetica;
+	font-size: 36px;
+}
+
+.buyButton {
+	width: 275px;
+	white-space: normal;
+}
+
+#slogan, #allTimeDicksSucked {
+	margin-bottom: 30px;
+	font-style: italic;
+}
+
+#allTimeDicksSucked {
+	font-size: 12px;
+}
+
+#suckDickButton {
+	width: 200px;
+	height: 100px;
+	font-size: 24px;
+}
+
+.hidden {
+	display: none;
+}
+
+#shopContainer, #grafixContainer {
+	width: 275px;
+}
+
+#shopContainer {
+	float: right;
+}
+
+#grafixContainer {
+	position: relative;
+	height: 800px;
+	float: left;
+}
+
+#footer {
+	margin-bottom: 10px;
+	position: absolute; 
+	bottom: 0; 
+	width: 99%;
+}
+
+.grafix {
+	position: absolute;
+}

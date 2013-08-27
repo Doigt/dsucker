@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Dick Sucker</title>
+	<link rel="stylesheet" href="./style.css" type="text/css" />
+	<link rel="icon" type="image/x-icon" href="./i/dickSuckingMachine.png" />
+	<script src="./dicksucker.js"></script>
+	<meta charset="UTF-8">
+</head>
+
+<body onload="tick()">
+	<div class="magicCenterElement" id="grafixContainer">
+	
+	</div>
+	<div class="magicCenterElement" id="shopContainer">
+		<b>Welcome To Ye Olde Sex Shoppe!</b><br /><br />
+		<i>Renewable dick sucking energy:</i>
+		<button class="buyButton" id="buyDickSuckingMachineButton" onclick="buy('dickSuckingMachine')" disabled></button> 
+		<button class="buyButton" id="buyCheapProstituteButton" onclick="buy('cheapProstitute')" disabled></button> 
+		<button class="buyButton" id="buyAntiChafingCreamButton" onclick="buy('antiChafingCream')" disabled></button>
+		<button class="buyButton" id="buyMidDickSuckingMachineButton" onclick="buy('midDickSuckingMachine')" disabled></button>
+		<button class="buyButton" id="buyWithdrawingCrackWhoreButton" onclick="buy('withdrawingCrackWhore')" disabled></button>
+		<button class="buyButton" id="buyLargeSpiderGagButton" onclick="buy('largeSpiderGag')" disabled></button>
+		<button class="buyButton" id="buyHiDickSuckingMachineButton" onclick="buy('hiDickSuckingMachine')" disabled></button>
+		<button class="buyButton" id="buyLuxuriousEscortButton" onclick="buy('luxuriousEscort')" disabled></button>
+		<button class="buyButton" id="buyMouthWideningSurgeryButton" onclick="buy('mouthWideningSurgery')" disabled></button>
+		<button class="buyButton" id="buyMouthImplantButton" onclick="buy('mouthImplant')" disabled></button>
+		<br /><br />
+		<i>Single use boosts:</i><br />
+		<button class="buyButton" id="buyVModeButton" onclick="buy('vMode')" disabled></button>
+		<button class="buyButton" id="buyAerodynamicDicksButton" onclick="buy('aerodynamicDicks')" disabled></button>
+		<button class="buyButton" id="buyDModeButton" onclick="buy('dMode')" disabled></button>
+		<br /><br />
+		<small>dps: Dicksucks Per Second<br />mp: Click Multiplier</small>
+	</div>
+	
+	<h1>Dick Sucker</h1>
+	<div class="magicCenterElement" id="slogan">You are an amateur dick sucker</div>
+	
+	<div class="dickDisplay" id="dickSuckingDisplay">0</div>
+	<div class="dickDisplay" id="dickSuckingFlavorText"></div>
+	<div class="magicCenterElement" id="allTimeDicksSucked">(all time: 0)</div>
+	
+	<div class="magicCenterElement" id="suckDickButtonContainer">
+		<button id="suckDickButton" onmousedown="suckDick()">Suck dick</button><br />
+	</div>
+	
+	<div class="magicCenterElement">
+		<small id="multiplierDisplay">Your click multiplier is 1</small><br />
+		<small id="dpsDisplay">Your current DPS is 0</small>
+	</div>
+	
+	<div class="magicCenterElement" id="footer">
+		<small>
+			<b>Saving not yet implemented!</b><br />
+			Inspired by Orteil's <a href="http://orteil.dashnet.org/experiments/cookie/" target="_blank">Cookie Clicker</a>
+		</small>
+	</div>
+</body>
+
+</html>
