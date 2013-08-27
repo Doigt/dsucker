@@ -47,7 +47,13 @@ function main() {
 
 function scaleDivs() {
 	document.getElementById("shopContainer").style.height = (window.innerHeight - 15) + "px";
-	document.getElementById("grafixContainer").style.height = (window.innerHeight - 15) + "px";
+	document.getElementById("grafixContainer").style.height = (window.innerHeight - 90) + "px"; 
+	// ^ 
+	// Some images may overflow the div and cause scroll bars to appear 
+	// and we don't want that, so leave some room at the bottom.
+	//
+	// The tallest image is 89px at the moment so an extra 90px should 
+	// cover it if it appears at the very bottom of the div.
 }
 
 function createButton(product, consumable) {
