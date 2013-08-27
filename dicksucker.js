@@ -60,8 +60,8 @@ function createButton(product, consumable) {
 }
 
 function suckDick() {
-	// dicksSucked += multiplier;
-	dicksSucked += 1000000;
+	dicksSucked += multiplier;
+	// dicksSucked += 1000000;
 	allTimeDicksSucked += multiplier;
 	updateDisplay();
 }
