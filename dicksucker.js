@@ -19,9 +19,9 @@ var products = [
 ];
 
 var consumables = [
-	{objID: "vMode",                 displayName: "/v/ Mode",                           owned: false, price: 500000,  multiplier: 30, dps: 30, effectText: "???" },
-	{objID: "dMode",                 displayName: "/d/ Mode",                           owned: false, price: 1000000, multiplier: 60, dps: 60, effectText: "???" },
-	{objID: "aerodynamicDicks",      displayName: "Aerodynamic Dicks",                  owned: false, price: 2000000, multiplier: 0,  dps: 0,  effectText: "Doubles DPS" }
+    {objID: "vMode",                 displayName: "/v/ Mode",                           owned: false, price: 500000,  multiplier: 30, dps: 30, effectText: "???" },
+    {objID: "dMode",                 displayName: "/d/ Mode",                           owned: false, price: 1000000, multiplier: 60, dps: 60, effectText: "???" },
+    {objID: "aerodynamicDicks",      displayName: "Aerodynamic Dicks",                  owned: false, price: 2000000, multiplier: 0,  dps: 0,  effectText: "Doubles DPS" }
 ];
 
 function main() {
