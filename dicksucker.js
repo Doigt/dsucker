@@ -65,7 +65,7 @@ function loadGame() {
 		for(n = 0; n < consumables.length; n++) {
 			for(o = 0; o < loadedConsumables.length; o++) {
 				if(loadedConsumables[o].objID == consumables[n].objID) {
-					consumables[n].owned = loadedConsumables.owned;
+					consumables[n].owned = loadedConsumables[o].owned;
 					break;
 				}
 			}
