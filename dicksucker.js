@@ -4,6 +4,9 @@ var multiplier = 1;
 var currentDPS = 0;
 var displayString = "dicks sucked";
 
+var tickIntervalID;
+var saveIntervalID;
+
 var products = [
     {objID: "dickSuckingMachine",    displayName: "Low Tech Dick Sucking Machine",      counter: 0,   price: 50,      multiplier: 0,    dps: 1  },
     {objID: "cheapProstitute",       displayName: "Cheap Prostitute",                   counter: 0,   price: 300,     multiplier: 1,    dps: 2  },
@@ -22,9 +25,81 @@ var consumables = [
     {objID: "vMode",                 displayName: "/v/ Mode",                           owned: false, price: 500000,  multiplier: 30,   dps: 30, effectText: "???"         },
     {objID: "dMode",                 displayName: "/d/ Mode",                           owned: false, price: 1000000, multiplier: 60,   dps: 60, effectText: "???"         },
     {objID: "permaLube",             displayName: "Permanently Lubed Throat",           owned: false, price: 1500000, multiplier: 125,  dps: 0,  effectText: "+125mp"      },
-    {objID: "aerodynamicDicks",      displayName: "Aerodynamic Dicks",                  owned: false, price: 2000000, multiplier: 0,    dps: 0,  effectText: "Doubles DPS"  },
-    {objID: "lukesDoubleDicking",    displayName: "Luke's Double Dicking",              owned: false, price: 3000000, multiplier: 0,    dps: 0,  effectText: "Doubles MP" }
+    {objID: "aerodynamicDicks",      displayName: "Aerodynamic Dicks",                  owned: false, price: 2000000, multiplier: 0,    dps: 0,  effectText: "Doubles DPS" },
+    {objID: "lukesDoubleDicking",    displayName: "Luke's Double Dicking",              owned: false, price: 3000000, multiplier: 0,    dps: 0,  effectText: "Doubles MP"  }
 ];
+
+function saveGame() {
+	$.cookie("DSDicksSucked",   dicksSucked,                 {expires: 365} );
+	$.cookie("DSAllTime",       allTimeDicksSucked,          {expires: 365} );
+	$.cookie("DSMultiplier",    multiplier,                  {expires: 365} );
+	$.cookie("DSCurrentDPS",    currentDPS,                  {expires: 365} );
+	$.cookie("DSDisplayString", displayString,               {expires: 365} );
+	$.cookie("DSProducts",      JSON.stringify(products),    {expires: 365} );
+	$.cookie("DSConsumables",   JSON.stringify(consumables), {expires: 365} );
+	
+	$('#saveStatus').fadeIn(2000, function() { $('#saveStatus').fadeOut(2000); });
+}
+
+function loadGame() {
+	if($.cookie("DSDicksSucked") != null) {
+		dicksSucked =        new Number($.cookie("DSDicksSucked"));
+		allTimeDicksSucked = new Number($.cookie("DSAllTime"));
+		multiplier =         new Number($.cookie("DSMultiplier"));
+		currentDPS =         new Number($.cookie("DSCurrentDPS"));
+		displayString =      $.cookie("DSDisplayString");
+		products =           $.parseJSON($.cookie("DSProducts"));
+		consumables =        $.parseJSON($.cookie("DSConsumables"));
+		
+		// Recreate grafix
+		for(i = 0; i < products.length; i++) {
+			if(products[i].counter > 0) {
+				for(j = 0; j < products[i].counter; j++) {
+					createGrafix(products[i].objID);
+				}
+			}
+		}
+		
+		for(k = 0; k < consumables.length; k++) {
+			if(consumables[k].owned == true) {
+				var newGrafix = document.createElement("img")
+				var randTop = Math.floor(Math.random()*101);
+				var randLeft = Math.floor(Math.random()*101);
+				var flavorText = consumables[k].displayName;
+				newGrafix.className = "grafix";
+				newGrafix.setAttribute("style", "top: " + randTop + "%; left: " + randLeft + "%;");
+				newGrafix.setAttribute("alt", flavorText);
+				newGrafix.setAttribute("title", flavorText);
+				newGrafix.src = "./i/" + consumables[k].objID + ".png";
+				
+				if(consumables[k].objID == "vMode" || consumables[k].objID == "dMode") {
+					document.body.style.backgroundImage = "url('./i/" + consumables[k].objID + "Background.png')";
+				}
+				
+				document.getElementById("grafixContainer").appendChild(newGrafix);
+				document.getElementById(consumables[k].objID + "Button").setAttribute("class","hidden");
+			}
+		}
+		
+		updateDisplay();
+	}
+}
+
+function resetGame() {
+	if(confirm('Are you sure you want to clear your saved data and start over?')) { 
+		window.clearInterval(tickIntervalID);
+		window.clearInterval(saveIntervalID);
+		
+		var cookies = document.cookie.split(";");
+		for(var i = 0; i < cookies.length; i++) {
+			var equals = cookies[i].indexOf("=");
+			var name = equals > -1 ? cookies[i].substr(0, equals) : cookies[i];
+			document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+		}
+		
+		location.reload();
+	}
+}
 
 function main() {
 	for(x = 0; x < products.length; x++) {
@@ -41,9 +116,12 @@ function main() {
 	suckDickButton.innerHTML = "<img src=\"./i/leftGuy.png\" class=\"buttonImage left\" /> Suck dick <img src=\"./i/rightGuy.png\" class=\"buttonImage right\" />";
 	document.getElementById("suckDickButtonContainer").appendChild(suckDickButton);
 	
-	window.setInterval(tick, 1000);
+	tickIntervalID = window.setInterval(tick, 1000);
 	window.onresize = function() { scaleDivs(); };
 	scaleDivs();
+	
+	loadGame();
+	saveIntervalID = window.setInterval(saveGame, 30000);
 }
 
 function scaleDivs() {
