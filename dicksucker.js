@@ -48,8 +48,28 @@ function loadGame() {
 		multiplier =         new Number($.cookie("DSMultiplier"));
 		currentDPS =         new Number($.cookie("DSCurrentDPS"));
 		displayString =      $.cookie("DSDisplayString");
-		products =           $.parseJSON($.cookie("DSProducts"));
-		consumables =        $.parseJSON($.cookie("DSConsumables"));
+		loadedProducts =     $.parseJSON($.cookie("DSProducts"));
+		loadedConsumables =  $.parseJSON($.cookie("DSConsumables"));
+
+		// Copy counters and prices to global array
+		for(l = 0; l < products.length; l++) {
+			for(m = 0; m < loadedProducts.length; m++) {
+				if(loadedProducts[m].objID == products[l].objID) {
+					products[l].counter = loadedProducts[m].counter;
+					products[l].price = loadedProducts[m].price;
+					break;
+				}
+			}
+		}
+		
+		for(n = 0; n < consumables.length; n++) {
+			for(o = 0; o < loadedConsumables.length; o++) {
+				if(loadedConsumables[o].objID == consumables[n].objID) {
+					consumables[n].owned = loadedConsumables.owned;
+					break;
+				}
+			}
+		}
 		
 		// Recreate grafix
 		for(i = 0; i < products.length; i++) {
