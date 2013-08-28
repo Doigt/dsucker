@@ -22,7 +22,8 @@ var consumables = [
     {objID: "vMode",                 displayName: "/v/ Mode",                           owned: false, price: 500000,  multiplier: 30,   dps: 30, effectText: "???"         },
     {objID: "dMode",                 displayName: "/d/ Mode",                           owned: false, price: 1000000, multiplier: 60,   dps: 60, effectText: "???"         },
     {objID: "permaLube",             displayName: "Permanently Lubed Throat",           owned: false, price: 1500000, multiplier: 125,  dps: 0,  effectText: "+125mp"      },
-    {objID: "aerodynamicDicks",      displayName: "Aerodynamic Dicks",                  owned: false, price: 2000000, multiplier: 0,    dps: 0,  effectText: "Doubles DPS" }
+    {objID: "aerodynamicDicks",      displayName: "Aerodynamic Dicks",                  owned: false, price: 2000000, multiplier: 0,    dps: 0,  effectText: "Doubles DPS"  },
+    {objID: "lukesDoubleDicking",    displayName: "Luke's Double Dicking",              owned: false, price: 3000000, multiplier: 0,    dps: 0,  effectText: "Doubles MP" }
 ];
 
 function main() {
@@ -150,6 +151,10 @@ function buy(whatToBuy) {
 						
 						newGrafix.src = "./i/dMode.png";
 						document.body.style.backgroundImage = "url('./i/dModeBackground.png')";
+						break;
+					case "lukesDoubleDicking":
+						newGrafix.src = "./i/lukesDoubleDicking.png";
+						multiplier += multiplier;
 						break;
 					case "aerodynamicDicks":
 						newGrafix.src = "./i/aerodynamicDicks.png";
