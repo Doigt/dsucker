@@ -30,27 +30,27 @@ var consumables = [
 ];
 
 var slogans = [
-	{maxValue: 500,      message: "You are an amateur dick sucker"                                               },
-	{maxValue: 1000,     message: "Your cocksucking skills are really coming along"                              },
-	{maxValue: 5000,     message: "People are starting to recommend you to their friends"                        },
-	{maxValue: 10000,    message: "You are now sucking off local politicians and business owners"                },
-	{maxValue: 20000,    message: "You start a cock sucking training course for porn stars"                      },
-	{maxValue: 35000,    message: "You've sucked off several presidents and kings"                               },
-	{maxValue: 50000,    message: "Every man, woman and pet in the world wish they had your cock sucking skills" },
-	{maxValue: 100000,   message: "You have now surpassed your mother in amount of dicks sucked"                 },
-	{maxValue: 200000,   message: "You bring the likes of Jenna Jameson and Bree Olson to shame"                 },
-	{maxValue: 350000,   message: "Aliens visit Earth to learn to suck cock like you"                            },
-	{maxValue: 500000,   message: "You are now sucking cock 24/7, even whilst resting"                           },
-	{maxValue: 750000,   message: "Your diet now consists exclusively of sperm and smegma"                       },
-	{maxValue: 1000000,  message: "Your body is now 98.5% semen"                                                 },
-	{maxValue: 1250000,  message: "The Earth is engulfed in a tidal wave of cum from your customers"             },
-	{maxValue: 1500000,  message: "All liquids in the solar system are now semen"                                },
-	{maxValue: 1750000,  message: "You have become exceedingly efficient at sucking dicks"                       },
-	{maxValue: 2000000,  message: "Sometimes you pull on it so hard, you rip the skin"                           },
-	{maxValue: 2500000,  message: "You now get all necessary sustenance from gobbling dong"                      },
-	{maxValue: 3000000,  message: "[dick sucking intensifies]"                                                   },
-	{maxValue: 5000000,  message: "The universe is now cum to the atomic level"                                  },
-	{maxValue: 10000000, message: "It's time to stop sucking cocks"                                              }
+    {maxValue: 500,      message: "You are an amateur dick sucker"                                               },
+    {maxValue: 1000,     message: "Your cocksucking skills are really coming along"                              },
+    {maxValue: 5000,     message: "People are starting to recommend you to their friends"                        },
+    {maxValue: 10000,    message: "You are now sucking off local politicians and business owners"                },
+    {maxValue: 20000,    message: "You start a cock sucking training course for porn stars"                      },
+    {maxValue: 35000,    message: "You've sucked off several presidents and kings"                               },
+    {maxValue: 50000,    message: "Every man, woman and pet in the world wish they had your cock sucking skills" },
+    {maxValue: 100000,   message: "You have now surpassed your mother in amount of dicks sucked"                 },
+    {maxValue: 200000,   message: "You bring the likes of Jenna Jameson and Bree Olson to shame"                 },
+    {maxValue: 350000,   message: "Aliens visit Earth to learn to suck cock like you"                            },
+    {maxValue: 500000,   message: "You are now sucking cock 24/7, even whilst resting"                           },
+    {maxValue: 750000,   message: "Your diet now consists exclusively of sperm and smegma"                       },
+    {maxValue: 1000000,  message: "Your body is now 98.5% semen"                                                 },
+    {maxValue: 1250000,  message: "The Earth is engulfed in a tidal wave of cum from your customers"             },
+    {maxValue: 1500000,  message: "All liquids in the solar system are now semen"                                },
+    {maxValue: 1750000,  message: "You have become exceedingly efficient at sucking dicks"                       },
+    {maxValue: 2000000,  message: "Sometimes you pull on it so hard, you rip the skin"                           },
+    {maxValue: 2500000,  message: "You now get all necessary sustenance from gobbling dong"                      },
+    {maxValue: 3000000,  message: "[dick sucking intensifies]"                                                   },
+    {maxValue: 5000000,  message: "The universe is now cum to the atomic level"                                  },
+    {maxValue: 10000000, message: "It's time to stop sucking cocks"                                              }
 ];
 
 function saveGame() {
