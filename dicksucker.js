@@ -29,6 +29,30 @@ var consumables = [
     {objID: "lukesDoubleDicking",    displayName: "Luke's Double Dicking",              owned: false, price: 3000000, multiplier: 0,    dps: 0,   effectText: "Doubles MP"  }
 ];
 
+var slogans = [
+	{maxValue: 500,      message: "You are an amateur dick sucker"                                               },
+	{maxValue: 1000,     message: "Your cocksucking skills are really coming along"                              },
+	{maxValue: 5000,     message: "People are starting to recommend you to their friends"                        },
+	{maxValue: 10000,    message: "You are now sucking off local politicians and business owners"                },
+	{maxValue: 20000,    message: "You start a cock sucking training course for porn stars"                      },
+	{maxValue: 35000,    message: "You've sucked off several presidents and kings"                               },
+	{maxValue: 50000,    message: "Every man, woman and pet in the world wish they had your cock sucking skills" },
+	{maxValue: 100000,   message: "You have now surpassed your mother in amount of dicks sucked"                 },
+	{maxValue: 200000,   message: "You bring the likes of Jenna Jameson and Bree Olson to shame"                 },
+	{maxValue: 350000,   message: "Aliens visit Earth to learn to suck cock like you"                            },
+	{maxValue: 500000,   message: "You are now sucking cock 24/7, even whilst resting"                           },
+	{maxValue: 750000,   message: "Your diet now consists exclusively of sperm and smegma"                       },
+	{maxValue: 1000000,  message: "Your body is now 98.5% semen"                                                 },
+	{maxValue: 1250000,  message: "The Earth is engulfed in a tidal wave of cum from your customers"             },
+	{maxValue: 1500000,  message: "All liquids in the solar system are now semen"                                },
+	{maxValue: 1750000,  message: "You have become exceedingly efficient at sucking dicks"                       },
+	{maxValue: 2000000,  message: "Sometimes you pull on it so hard, you rip the skin"                           },
+	{maxValue: 2500000,  message: "You now get all necessary sustenance from gobbling dong"                      },
+	{maxValue: 3000000,  message: "[dick sucking intensifies]"                                                   },
+	{maxValue: 5000000,  message: "The universe is now cum to the atomic level"                                  },
+	{maxValue: 10000000, message: "It's time to stop sucking cocks"                                              }
+];
+
 function saveGame() {
 	$.cookie("DSDicksSucked",   dicksSucked,                 {expires: 365} );
 	$.cookie("DSAllTime",       allTimeDicksSucked,          {expires: 365} );
@@ -322,47 +346,12 @@ function createGrafix(which) {
 }
 
 function updateSlogan() {
-	var slogan = document.getElementById("slogan");
+	var sloganElement = document.getElementById("slogan");
 	
-	if(allTimeDicksSucked <= 500) {
-		slogan.innerHTML = "You are an amateur dick sucker";
-	} else if(allTimeDicksSucked <= 1000) {
-		slogan.innerHTML = "Your cocksucking skills are really coming along";
-	} else if(allTimeDicksSucked <= 5000) {
-		slogan.innerHTML = "People are starting to recommend you to their friends";
-	} else if(allTimeDicksSucked <= 10000) {
-		slogan.innerHTML = "You are now sucking off local politicians and business owners";
-	} else if(allTimeDicksSucked <= 20000) {
-		slogan.innerHTML = "You start a cock sucking training course for porn stars";
-	} else if(allTimeDicksSucked <= 35000) {
-		slogan.innerHTML = "You've sucked off several presidents and kings";
-	} else if(allTimeDicksSucked <= 50000) {
-		slogan.innerHTML = "Every man, woman and pet in the world wish they had your cock sucking skills";
-	} else if(allTimeDicksSucked <= 100000) {
-		slogan.innerHTML = "You have now surpassed your mother in amount of dicks sucked";
-	} else if(allTimeDicksSucked <= 200000) {
-		slogan.innerHTML = "You bring the likes of Jenna Jameson and Bree Olson to shame";
-	} else if(allTimeDicksSucked <= 350000) {
-		slogan.innerHTML = "Aliens visit Earth to learn to suck cock like you";
-	} else if(allTimeDicksSucked <= 500000) {
-		slogan.innerHTML = "You are now sucking cock 24/7, even whilst resting";
-	} else if(allTimeDicksSucked <= 750000) {
-		slogan.innerHTML = "Your diet now consists exclusively of sperm and smegma";
-	} else if(allTimeDicksSucked <= 1000000) {
-		slogan.innerHTML = "Your body is now 98.5% semen";
-	} else if(allTimeDicksSucked <= 1250000) {
-		slogan.innerHTML = "The Earth is engulfed in a tidal wave of cum from your customers";
-	} else if(allTimeDicksSucked <= 1500000) {
-		slogan.innerHTML = "All liquids in the solar system are now semen";
-	} else if(allTimeDicksSucked <= 1750000) {
-		slogan.innerHTML = "You have become exceedingly efficient at sucking dicks";
-	} else if(allTimeDicksSucked <= 2000000) {
-		slogan.innerHTML = "Sometimes you pull on it so hard, you rip the skin";
-	} else if(allTimeDicksSucked <= 2500000) {
-		slogan.innerHTML = "You now get all necessary sustenance from gobbling dong";
-	} else if(allTimeDicksSucked <= 3000000) {
-		slogan.innerHTML = "[dick sucking intensifies]";
-	} else {
-		slogan.innerHTML = "It is time to stop sucking cocks";
+	for(i = 0; i < slogans.length; i++) {
+		if(allTimeDicksSucked <= slogans[i].maxValue) {
+			sloganElement.innerHTML = slogans[i].message;
+			break;
+		}
 	}
 }
