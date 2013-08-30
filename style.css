@@ -30,11 +30,42 @@ div.dickDisplay, .magicCenterElement, h1 {
 div.dickDisplay {
 	font-family: Helvetica;
 	font-size: 36px;
+	
 }
 
-.buyButton {
+h1, div.dickDisplay {
+	text-shadow: #000 0px 1px 1px;
+}
+
+.buyButton:enabled, #suckDickButton {
 	width: 275px;
 	white-space: normal;
+	background: linear-gradient(to bottom, rgba(135,224,253,1) 0%,rgba(83,203,241,1) 40%,rgba(5,171,224,1) 100%);
+	color: #000;
+	border: 1px solid gray;
+	border-radius: 20px;
+	margin-bottom: 2px;
+}
+
+#consumablesContainer > .buyButton:enabled {
+	width: 275px;
+	white-space: normal;
+	color: #000;
+	border: 1px solid gray;
+	border-radius: 20px;
+	margin-bottom: 2px;
+	background: linear-gradient(to bottom, #fefcea 0%,#f1da36 100%);
+}
+
+.buyButton:disabled, #consumablesContainer > .buyButton:disabled {
+	width: 275px;
+	white-space: normal;
+	color: #000;
+	border: 1px solid gray;
+	border-radius: 20px;
+	margin-bottom: 2px;
+	background-color: #999;
+	color: #333;
 }
 
 #slogan, #allTimeDicksSucked {
@@ -48,7 +79,7 @@ div.dickDisplay {
 
 #suckDickButton {
 	width: 250px;
-	height: 100px;
+	height: 75px;
 	font-size: 24px;
 }
 
