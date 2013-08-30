@@ -156,9 +156,9 @@ function main() {
 	
 	var suckDickButton = document.createElement("button");
 	suckDickButton.setAttribute("id", "suckDickButton");
-	suckDickButton.onmousedown = function () { suckDick(); };
 	suckDickButton.innerHTML = "<img src=\"./i/leftGuy.png\" class=\"buttonImage left\" /> Suck dick <img src=\"./i/rightGuy.png\" class=\"buttonImage right\" />";
 	document.getElementById("suckDickButtonContainer").appendChild(suckDickButton);
+	$('#suckDickButton').mouseup( function(event) { if(event.which == 1) { suckDick() } });
 	
 	tickIntervalID = window.setInterval(tick, 1000);
 	window.onresize = function() { scaleDivs(); };
