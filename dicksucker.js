@@ -169,7 +169,7 @@ function main() {
 }
 
 function scaleDivs() {
-	document.getElementById("shopContainer").style.height = (window.innerHeight - 15) + "px";
+	document.getElementById("shopContainer").style.height = (window.innerHeight - 60) + "px";
 	document.getElementById("grafixContainer").style.height = (window.innerHeight - 100) + "px"; 
 	// ^ 
 	// Some images may overflow the div and cause scroll bars to appear 
