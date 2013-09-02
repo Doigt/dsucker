@@ -208,6 +208,7 @@ function updateDisplay() {
 	document.getElementById("multiplierDisplay").innerHTML = "Your click multiplier is " + beautify(multiplier);
 	document.getElementById("dpsDisplay").innerHTML = "Your current DPS is " + beautify(currentDPS);
 	document.getElementById("allTimeDicksSucked").innerHTML = "(all time: " + beautify(allTimeDicksSucked) + ")";
+	document.title = beautify(dicksSucked) + " " + displayString;
 	
 	for(i = 0; i < products.length; i++) {
 			document.getElementById(products[i].objID + "Button").innerHTML = 
