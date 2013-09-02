@@ -16,6 +16,7 @@ body {
 }
 
 h1 {
+	font-family: 'Unkempt', cursive;
 	font-size: 48px;
 	margin: none;
 	padding: none;
@@ -28,7 +29,8 @@ div.dickDisplay, .magicCenterElement, h1 {
 }
 
 div.dickDisplay {
-	font-family: Helvetica;
+	font-family: 'Unkempt', cursive;
+	font-weight: 400;
 	font-size: 36px;
 	
 }
