@@ -1,3 +1,9 @@
+a {
+	text-decoration: none;
+}
+
+a, a:visited, a:hover { color: #00F; }
+
 #saveStatus {
 	display: none; 
 	font-size: 24px; 

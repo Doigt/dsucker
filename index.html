@@ -4,6 +4,7 @@
 <head>
 	<title>Dick Sucker</title>
 	<link rel="stylesheet" href="./style.css" type="text/css" />
+	<link rel="stylesheet" href="./effeckt.css" type="text/css" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Unkempt:700,400"  type="text/css">
 	<link rel="icon" type="image/x-icon" href="./i/dickSuckingMachine.png" />
 	<script src="./lib/jquery-1.10.2.min.js"></script>
@@ -14,6 +15,17 @@
 </head>
 
 <body onload="main()">
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-39482150-3', 'gamelauncher.com');
+	  ga('send', 'pageview');
+
+	</script>
+	
 	<div class="magicCenterElement" id="grafixContainer">
 	
 	</div>
@@ -53,9 +65,11 @@
 	<div class="magicCenterElement" id="footer">
 		<small>
 			<div id="saveStatus"><b>Game saved!</b></div><br />
-			<a href="http://github.com/Doigt/dsucker" target="_blank">GitHub</a> | Inspired by Orteil's <a href="http://orteil.dashnet.org/experiments/cookie/" target="_blank">Cookie Clicker</a> | 
-			<a href="javascript:saveGame()">Force save</a> |
-			<a href="javascript:resetGame()">Reset game</a>
+			<a data-effeckt-tooltip-type="bubble" data-effeckt-tooltip-text="View the Git repository for this project" class="effeckt-tooltip" data-effeckt-tooltip-position="top" href="https://github.com/Doigt/dsucker" target="_blank">Source code</a> | 
+			<a data-effeckt-tooltip-type="bubble" data-effeckt-tooltip-text="View recent changes to the game" class="effeckt-tooltip" data-effeckt-tooltip-position="top" href="https://github.com/Doigt/dsucker/commits/master" target="_blank">Changelog</a> | 
+			<a data-effeckt-tooltip-type="bubble" data-effeckt-tooltip-text="Report bugs or request features" class="effeckt-tooltip" data-effeckt-tooltip-position="top" href="https://github.com/Doigt/dsucker/issues" target="_blank">Bugs</a> | 
+			<a data-effeckt-tooltip-type="bubble" data-effeckt-tooltip-text="The game autosaves every 30 seconds" class="effeckt-tooltip" data-effeckt-tooltip-position="top" href="javascript:saveGame()" >Force save</a> |
+			<a data-effeckt-tooltip-type="bubble" data-effeckt-tooltip-text="Delete all your progress and start over" class="effeckt-tooltip" data-effeckt-tooltip-position="top" href="javascript:resetGame()">Reset game</a>
 		</small>
 	</div>
 </body>

@@ -1,1 +1,1 @@
-this is a game about sucking dicks - play it at http://doigt.github.io/dsucker
+this is a game about sucking dicks - play it here: http://doigt.gamelauncher.info/dsucker/
