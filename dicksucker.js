@@ -67,7 +67,7 @@ function saveGame() {
 }
 
 function loadGame() {
-	if($.cookie("DSDicksSucked") != null) {
+	if($.cookie("DSDicksSucked") !== null) {
 		dicksSucked =        new Number($.cookie("DSDicksSucked"));
 		allTimeDicksSucked = new Number($.cookie("DSAllTime"));
 		multiplier =         new Number($.cookie("DSMultiplier"));
@@ -79,7 +79,7 @@ function loadGame() {
 		// Copy counters and prices to global array
 		for(l = 0; l < products.length; l++) {
 			for(m = 0; m < loadedProducts.length; m++) {
-				if(loadedProducts[m].objID == products[l].objID) {
+				if(loadedProducts[m].objID === products[l].objID) {
 					products[l].counter = loadedProducts[m].counter;
 					products[l].price = loadedProducts[m].price;
 					break;
@@ -89,7 +89,7 @@ function loadGame() {
 		
 		for(n = 0; n < consumables.length; n++) {
 			for(o = 0; o < loadedConsumables.length; o++) {
-				if(loadedConsumables[o].objID == consumables[n].objID) {
+				if(loadedConsumables[o].objID === consumables[n].objID) {
 					consumables[n].owned = loadedConsumables[o].owned;
 					break;
 				}
@@ -106,8 +106,8 @@ function loadGame() {
 		}
 		
 		for(k = 0; k < consumables.length; k++) {
-			if(consumables[k].owned == true) {
-				var newGrafix = document.createElement("img")
+			if(consumables[k].owned === true) {
+				var newGrafix = document.createElement("img");
 				var randTop = Math.floor(Math.random()*101);
 				var randLeft = Math.floor(Math.random()*101);
 				var flavorText = consumables[k].displayName;
@@ -117,11 +117,11 @@ function loadGame() {
 				newGrafix.setAttribute("title", flavorText);
 				newGrafix.src = "./i/" + consumables[k].objID + ".png";
 				
-				if(consumables[k].objID == "vMode" || consumables[k].objID == "dMode") {
+				if(consumables[k].objID === "vMode" || consumables[k].objID === "dMode") {
 					document.body.style.backgroundImage = "url('./i/" + consumables[k].objID + "Background.png')";
 				}
 				
-				if(consumables[k].objID == "anonGetOut") {
+				if(consumables[k].objID === "anonGetOut") {
 					addMusic();
 				}
 				
@@ -163,7 +163,7 @@ function main() {
 	suckDickButton.setAttribute("id", "suckDickButton");
 	suckDickButton.innerHTML = "<img src=\"./i/leftGuy.png\" class=\"buttonImage left\" /> Suck dick <img src=\"./i/rightGuy.png\" class=\"buttonImage right\" />";
 	document.getElementById("suckDickButtonContainer").appendChild(suckDickButton);
-	$('#suckDickButton').mouseup( function(event) { if(event.which == 1) { suckDick() } });
+	$('#suckDickButton').mouseup( function(event) { if(event.which === 1) { suckDick(); } });
 	
 	tickIntervalID = window.setInterval(tick, 1000);
 	window.onresize = function() { scaleDivs(); };
@@ -191,7 +191,7 @@ function createButton(product, consumable) {
 	newButton.onclick = function() { buy(product.objID); };
 	newButton.disabled = true;
 
-	if(consumable == true) {
+	if(consumable === true) {
 		newButton.innerHTML = "<b>"+ product.displayName + "</b><br />" + beautify(product.price) + " Dicksucks (" + product.effectText + ")";
 		document.getElementById("consumablesContainer").appendChild(newButton);
 	} else {
@@ -228,7 +228,7 @@ function updateDisplay() {
 
 function buy(whatToBuy) {
 	for(i = 0; i < products.length; i++) {
-		if(products[i].objID == whatToBuy) {
+		if(products[i].objID === whatToBuy) {
 			if(dicksSucked >= products[i].price) {
 				dicksSucked -= products[i].price;
 				multiplier += products[i].multiplier;
@@ -237,19 +237,19 @@ function buy(whatToBuy) {
 				products[i].counter += 1;
 				createGrafix(whatToBuy);
 				updateDisplay();
-				return;
+				return true;
 			}
 		}
 	}
 	
 	for(j = 0; j < consumables.length; j++) {
-		if(consumables[j].objID == whatToBuy) {
+		if(consumables[j].objID === whatToBuy) {
 			if(dicksSucked >= consumables[j].price) {
 				dicksSucked -= consumables[j].price;
 				multiplier += consumables[j].multiplier;
 				currentDPS += consumables[j].dps;
 				
-				var newGrafix = document.createElement("img")
+				var newGrafix = document.createElement("img");
 				var randTop = Math.floor(Math.random()*101);
 				var randLeft = Math.floor(Math.random()*101);
 				var flavorText = consumables[j].displayName;
@@ -262,7 +262,7 @@ function buy(whatToBuy) {
 				// Boost-specific effects
 				switch (whatToBuy) {
 					case "vMode":
-						if(consumables[1].owned == true) { // if user has /d/ mode already
+						if(consumables[1].owned === true) { // if user has /d/ mode already
 							displayString = "feminine futanari dicks sucked";
 						} else {
 							displayString = "feminine dicks sucked";
@@ -271,7 +271,7 @@ function buy(whatToBuy) {
 						document.body.style.backgroundImage = "url('./i/vModeBackground.png')";
 						break;
 					case "dMode":
-						if(consumables[0].owned == true) { // if user has /v/ mode already
+						if(consumables[0].owned === true) { // if user has /v/ mode already
 							displayString = "feminine futanari dicks sucked";
 						} else {
 							displayString = "futanari dicks sucked";
@@ -296,9 +296,11 @@ function buy(whatToBuy) {
 				document.getElementById(consumables[j].objID + "Button").setAttribute("class","hidden");
 				consumables[j].owned = true;
 				updateDisplay();
+                                return true;
 			}
 		}
 	}
+        return false;
 }
 
 function addMusic() {
@@ -308,6 +310,7 @@ function addMusic() {
 	embedElement.width = "1px";
 	embedElement.height = "1px";
 	document.getElementById("grafixContainer").appendChild(embedElement);
+        return true;
 }
 
 function toggleButtons() {
@@ -335,7 +338,7 @@ function tick() {
 }
 
 function beautify(num) {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return new String(num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 }
 
 function createGrafix(which) {
