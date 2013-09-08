@@ -1,3 +1,5 @@
+var isDebug = true;
+
 var dicksSucked = 0;
 var allTimeDicksSucked = 0;
 var multiplier = 1;
@@ -201,8 +203,12 @@ function createButton(product, consumable) {
 }
 
 function suckDick() {
-	dicksSucked += multiplier;
-	// dicksSucked += 1000000; 
+	if(isDebug) {
+            dicksSucked += 1000000;
+        } else {
+            dicksSucked += multiplier;
+        }
+	
 	allTimeDicksSucked += multiplier;
 	updateDisplay();
 }
