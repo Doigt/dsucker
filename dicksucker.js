@@ -24,6 +24,7 @@ var products = [
 var consumables = [
     {objID: "vMode",                 displayName: "/v/ Mode",                           owned: false, price: 500000,  multiplier: 200,  dps: 120, effectText: "???"         },
     {objID: "dMode",                 displayName: "/d/ Mode",                           owned: false, price: 1000000, multiplier: 250,  dps: 250, effectText: "???"         },
+    {objID: "anonGetOut",            displayName: "ANON GET OUT",                       owned: false, price: 1250000, multiplier: 200,  dps: 120, effectText: "Lovely music"},
     {objID: "permaLube",             displayName: "Permanently Lubed Throat",           owned: false, price: 1500000, multiplier: 500,  dps: 0,   effectText: "+500mp"      },
     {objID: "aerodynamicDicks",      displayName: "Aerodynamic Dicks",                  owned: false, price: 2000000, multiplier: 0,    dps: 0,   effectText: "Doubles DPS" },
     {objID: "lukesDoubleDicking",    displayName: "Luke's Double Dicking",              owned: false, price: 3000000, multiplier: 0,    dps: 0,   effectText: "Doubles MP"  }
@@ -118,6 +119,10 @@ function loadGame() {
 				
 				if(consumables[k].objID == "vMode" || consumables[k].objID == "dMode") {
 					document.body.style.backgroundImage = "url('./i/" + consumables[k].objID + "Background.png')";
+				}
+				
+				if(consumables[k].objID == "anonGetOut") {
+					addMusic();
 				}
 				
 				document.getElementById("grafixContainer").appendChild(newGrafix);
@@ -252,6 +257,7 @@ function buy(whatToBuy) {
 				newGrafix.setAttribute("style", "top: " + randTop + "%; left: " + randLeft + "%;");
 				newGrafix.setAttribute("alt", flavorText);
 				newGrafix.setAttribute("title", flavorText);
+				newGrafix.src = "./i/" + whatToBuy + ".png";
 				
 				// Boost-specific effects
 				switch (whatToBuy) {
@@ -262,7 +268,6 @@ function buy(whatToBuy) {
 							displayString = "feminine dicks sucked";
 						}
 						
-						newGrafix.src = "./i/vMode.png";
 						document.body.style.backgroundImage = "url('./i/vModeBackground.png')";
 						break;
 					case "dMode":
@@ -272,19 +277,18 @@ function buy(whatToBuy) {
 							displayString = "futanari dicks sucked";
 						}
 						
-						newGrafix.src = "./i/dMode.png";
 						document.body.style.backgroundImage = "url('./i/dModeBackground.png')";
 						break;
 					case "lukesDoubleDicking":
-						newGrafix.src = "./i/lukesDoubleDicking.png";
 						multiplier += multiplier;
 						break;
 					case "aerodynamicDicks":
-						newGrafix.src = "./i/aerodynamicDicks.png";
 						currentDPS += currentDPS;
 						break;
 					case "permaLube":
-						newGrafix.src = "./i/permaLube.png";
+						break;
+					case "anonGetOut":
+						addMusic();
 						break;
 				}
 
@@ -295,6 +299,15 @@ function buy(whatToBuy) {
 			}
 		}
 	}
+}
+
+function addMusic() {
+	var embedElement = document.createElement("embed");
+	embedElement.src = "https://youtube.googleapis.com/v/-F4gG7rXw1s?autoplay=1&loop=1&playlist=-F4gG7rXw1s";
+	embedElement.setAttribute("type", "application/x-shockwave-flash");
+	embedElement.width = "1px";
+	embedElement.height = "1px";
+	document.getElementById("grafixContainer").appendChild(embedElement);
 }
 
 function toggleButtons() {
