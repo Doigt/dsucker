@@ -296,6 +296,19 @@ function buy(whatToBuy) {
 				document.getElementById(consumables[j].objID + "Button").setAttribute("class","hidden");
 				consumables[j].owned = true;
 				updateDisplay();
+                                
+                                // check whether user has all consumables
+                                var success = true;
+                                for(var desu = 0; desu < consumables.length; desu++) {
+                                    if(consumables[desu].owned == false) {
+                                        success = false;
+                                        break;
+                                    }
+                                }
+                                
+                                if(success) {
+                                    alert("YOU'RE WINNER!\n\nCongratulations! You've successfully beaten the game in its current state.\nThank you for playing! Stay tuned for updates, and feel free to submit feature\nsuggestions, bugs or comments on GitHub (link on bottom of the page).\n\nTell your friends!")
+                                }
 			}
 		}
 	}
