@@ -1,3 +1,5 @@
+// OP is a massive faggot
+
 var dicksSucked = 0;
 var allTimeDicksSucked = 0;
 var multiplier = 1;
