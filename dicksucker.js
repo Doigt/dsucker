@@ -107,7 +107,7 @@ function loadGame() {
 
         for(k = 0; k < consumables.length; k++) {
             if(consumables[k].owned == true) {
-                var newGrafix = document.createElement("img")
+                var newGrafix = document.createElement("img");
                 var randTop = Math.floor(Math.random()*101);
                 var randLeft = Math.floor(Math.random()*101);
                 var flavorText = consumables[k].displayName;
