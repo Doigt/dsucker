@@ -1,3 +1,17 @@
+@font-face {
+	font-family: 'Unkempt';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Unkempt'), url(./res/Unkempt.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Unkempt';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Unkempt Bold'), local('Unkempt-Bold'), url(./res/UnkemptBold.woff) format('woff');
+}
+
 a {
 	text-decoration: none;
 }
