@@ -28,7 +28,7 @@ var consumables = [
     {objID: "permaLube",             displayName: "Permanently Lubed Throat",           owned: false, price: 1500000,  multiplier: 500,  dps: 0,    effectText: "+500mp"      },
     {objID: "aerodynamicDicks",      displayName: "Aerodynamic Dicks",                  owned: false, price: 2000000,  multiplier: 0,    dps: 0,    effectText: "Doubles DPS" },
     {objID: "lukesDoubleDicking",    displayName: "Luke's Double Dicking",              owned: false, price: 3000000,  multiplier: 0,    dps: 0,    effectText: "Doubles MP"  },
-    {objID: "arbitraryWinUpgrade",   displayName: "GAME.WINRAR",                        owned: false, price: 20000000, multiplier: 1000, dps: 1000, effectText: "Who knows?"  }
+    {objID: "arbitraryWinUpgrade",   displayName: "GAME.RAR",                        owned: false, price: 20000000, multiplier: 1000, dps: 1000, effectText: "Who knows?"  }
 ];
 
 var slogans = [
@@ -309,7 +309,7 @@ function buy(whatToBuy) {
                 }
 
                 if(success) {
-                    alert("YOU'RE WINNER!\n\nCongratulations! You've successfully beaten the game in its current state.\nThank you for playing! Stay tuned for updates, and feel free to submit feature\nsuggestions, bugs or comments on GitHub (link on bottom of the page).\n\nTell your friends!")
+                    alert("YOU'RE WINRAR!\n\nCongratulations! You've successfully beaten the game in its current state.\nThank you for playing! Stay tuned for updates, and feel free to submit feature\nsuggestions, bugs or comments on GitHub (link on bottom of the page).\n\nTell your friends!")
                 }
             }
         }
