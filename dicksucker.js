@@ -51,7 +51,8 @@ var slogans = [
     {maxValue: 2500000,  message: "You now get all necessary sustenance from gobbling dong"                      },
     {maxValue: 3000000,  message: "[dick sucking intensifies]"                                                   },
     {maxValue: 5000000,  message: "The universe is now cum to the atomic level"                                  },
-    {maxValue: 10000000, message: "It's time to stop sucking cocks"                                              }
+    {maxValue: 10000000, message: "It's time to stop sucking cocks"                                              },
+    {maxValue: 20000000, message: "You really like sucking dicks, huh?"                                          }
 ];
 
 function saveGame() {
