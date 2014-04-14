@@ -8,26 +8,27 @@ var tickIntervalID;
 var saveIntervalID;
 
 var products = [
-    {objID: "dickSuckingMachine",    displayName: "Low Tech Dick Sucking Machine",      counter: 0,   price: 50,      multiplier: 0,    dps: 2  },
-    {objID: "cheapProstitute",       displayName: "Cheap Prostitute",                   counter: 0,   price: 300,     multiplier: 1,    dps: 4  },
-    {objID: "antiChafingCream",      displayName: "Anti Chafing Cream",                 counter: 0,   price: 600,     multiplier: 2,    dps: 6  },
-    {objID: "midDickSuckingMachine", displayName: "Mid Tech Cock Slurping Contraption", counter: 0,   price: 2000,    multiplier: 3,    dps: 12 },
-    {objID: "withdrawingCrackWhore", displayName: "Withdrawing Crack Whore",            counter: 0,   price: 4000,    multiplier: 5,    dps: 18 },
-    {objID: "largeSpiderGag",        displayName: "Large Spider Gag",                   counter: 0,   price: 7500,    multiplier: 10,   dps: 24 },
-    {objID: "hiDickSuckingMachine",  displayName: "Hi Tech Knob Gobbling Device",       counter: 0,   price: 10000,   multiplier: 15,   dps: 30 },
-    {objID: "luxuriousEscort",       displayName: "Luxurious Escort",                   counter: 0,   price: 20000,   multiplier: 30,   dps: 36 },
-    {objID: "mouthWideningSurgery",  displayName: "Mouth-Widening Surgery",             counter: 0,   price: 50000,   multiplier: 50,   dps: 40 },
-    {objID: "mouthImplant",          displayName: "Implant More Mouths",                counter: 0,   price: 200000,  multiplier: 70,   dps: 50 },
-    {objID: "cockPortal",            displayName: "Cock Universe Portal",               counter: 0,   price: 350000,  multiplier: 100,  dps: 72 }
+    {objID: "dickSuckingMachine",    displayName: "Low Tech Dick Sucking Machine",      counter: 0,   price: 50,       multiplier: 0,    dps: 2  },
+    {objID: "cheapProstitute",       displayName: "Cheap Prostitute",                   counter: 0,   price: 300,      multiplier: 1,    dps: 4  },
+    {objID: "antiChafingCream",      displayName: "Anti Chafing Cream",                 counter: 0,   price: 600,      multiplier: 2,    dps: 6  },
+    {objID: "midDickSuckingMachine", displayName: "Mid Tech Cock Slurping Contraption", counter: 0,   price: 2000,     multiplier: 3,    dps: 12 },
+    {objID: "withdrawingCrackWhore", displayName: "Withdrawing Crack Whore",            counter: 0,   price: 4000,     multiplier: 5,    dps: 18 },
+    {objID: "largeSpiderGag",        displayName: "Large Spider Gag",                   counter: 0,   price: 7500,     multiplier: 10,   dps: 24 },
+    {objID: "hiDickSuckingMachine",  displayName: "Hi Tech Knob Gobbling Device",       counter: 0,   price: 10000,    multiplier: 15,   dps: 30 },
+    {objID: "luxuriousEscort",       displayName: "Luxurious Escort",                   counter: 0,   price: 20000,    multiplier: 30,   dps: 36 },
+    {objID: "mouthWideningSurgery",  displayName: "Mouth-Widening Surgery",             counter: 0,   price: 50000,    multiplier: 50,   dps: 40 },
+    {objID: "mouthImplant",          displayName: "Implant More Mouths",                counter: 0,   price: 200000,   multiplier: 70,   dps: 50 },
+    {objID: "cockPortal",            displayName: "Cock Universe Portal",               counter: 0,   price: 350000,   multiplier: 100,  dps: 72 }
 ];
 
 var consumables = [
-    {objID: "vMode",                 displayName: "/v/ Mode",                           owned: false, price: 500000,  multiplier: 200,  dps: 120, effectText: "???"         },
-    {objID: "dMode",                 displayName: "/d/ Mode",                           owned: false, price: 1000000, multiplier: 250,  dps: 250, effectText: "???"         },
-    {objID: "anonGetOut",            displayName: "ANON GET OUT",                       owned: false, price: 1250000, multiplier: 200,  dps: 120, effectText: "Lovely music"},
-    {objID: "permaLube",             displayName: "Permanently Lubed Throat",           owned: false, price: 1500000, multiplier: 500,  dps: 0,   effectText: "+500mp"      },
-    {objID: "aerodynamicDicks",      displayName: "Aerodynamic Dicks",                  owned: false, price: 2000000, multiplier: 0,    dps: 0,   effectText: "Doubles DPS" },
-    {objID: "lukesDoubleDicking",    displayName: "Luke's Double Dicking",              owned: false, price: 3000000, multiplier: 0,    dps: 0,   effectText: "Doubles MP"  }
+    {objID: "vMode",                 displayName: "/v/ Mode",                           owned: false, price: 500000,   multiplier: 200,  dps: 120,  effectText: "???"         },
+    {objID: "dMode",                 displayName: "/d/ Mode",                           owned: false, price: 1000000,  multiplier: 250,  dps: 250,  effectText: "???"         },
+    {objID: "anonGetOut",            displayName: "ANON GET OUT",                       owned: false, price: 1250000,  multiplier: 200,  dps: 120,  effectText: "Lovely music"},
+    {objID: "permaLube",             displayName: "Permanently Lubed Throat",           owned: false, price: 1500000,  multiplier: 500,  dps: 0,    effectText: "+500mp"      },
+    {objID: "aerodynamicDicks",      displayName: "Aerodynamic Dicks",                  owned: false, price: 2000000,  multiplier: 0,    dps: 0,    effectText: "Doubles DPS" },
+    {objID: "lukesDoubleDicking",    displayName: "Luke's Double Dicking",              owned: false, price: 3000000,  multiplier: 0,    dps: 0,    effectText: "Doubles MP"  }
+    {objID: "arbitraryWinUpgrade",   displayName: "GAME.RAR",                        owned: false, price: 20000000, multiplier: 1000, dps: 1000, effectText: "Who knows?"  }
 ];
 
 var slogans = [
