@@ -317,29 +317,18 @@ function buy(whatToBuy) {
 }
 
 function addMusic() {
-    var embedElement = document.createElement("embed");
-    embedElement.src = "https://youtube.googleapis.com/v/-F4gG7rXw1s?autoplay=1&loop=1&playlist=-F4gG7rXw1s";
-    embedElement.setAttribute("type", "application/x-shockwave-flash");
-    embedElement.setAttribute("id", "anonGetOutEmbed");
-    embedElement.width = "1px";
-    embedElement.height = "1px";
-    document.getElementById("grafixContainer").appendChild(embedElement);
-	
-	var killElement = document.createElement("button");
-	killElement.setAttribute("id", "killMusicButton");
-	killElement.innerHTML = "Kill music";
-	killElement.style.position = "absolute";
-	killElement.style.left = 0;
-	killElement.style.top = 0;
-	killElement.onclick = function(){ killMusic(); };
-	document.body.appendChild(killElement);
-}
-
-function killMusic() {
-    var embedElement = document.getElementById("anonGetOutEmbed");
-    var killElement = document.getElementById("killMusicButton");
-    embedElement.parentNode.removeChild(embedElement);
-    killElement.parentNode.removeChild(killElement);
+    var audioElement = document.createElement("audio");
+    audioElement.setAttribute("controls","1");
+    audioElement.setAttribute("autoplay","1");
+    audioElement.setAttribute("loop","1");
+    
+    var audioSrcElement = document.createElement("source");
+    audioSrcElement.src = "./res/getout.mp3";
+    audioSrcElement.type = "audio/mpeg";
+    
+    audioElement.appendChild(audioSrcElement);
+    
+    document.body.insertBefore(audioElement, document.body.firstChild);
 }
 
 function toggleButtons() {
